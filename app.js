@@ -24,6 +24,20 @@ function createDays(data) {
         <p class="day-container-title">${day}</p>
         `
         weeklySpendingsContainer.appendChild(dayContainerEl)
+        // let's make on click event for mobile screen to check out info for the day
+        let dayContainerFilledEl = dayContainerEl.querySelector(".day-container-filled")
+        dayContainerFilledEl.addEventListener("click", (e) => {
+            if (e.view.innerWidth <= 530) {
+                if (e.target.parentElement.classList.contains("selected")) {
+                    e.target.parentElement.classList.remove("selected")
+                } else {
+                    document.querySelectorAll(".day-container-filled").forEach((item) => {
+                        item.classList.remove("selected")
+                        e.target.parentElement.classList.add("selected")
+                    })
+                }
+            }
+        })
     })
 }
 
@@ -40,5 +54,3 @@ function largestAmountDayCoefficientAndDay(data) {
 }
 
 fetchInfo()
-
-// createNewDayContainerElement("hey")
