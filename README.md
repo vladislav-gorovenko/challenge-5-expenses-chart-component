@@ -6,8 +6,8 @@
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/martinideniam/project-5-expenses-chart-component
+- Live Site URL: https://martinideniam.github.io/project-5-expenses-chart-component/
 
 ### Built with
 
