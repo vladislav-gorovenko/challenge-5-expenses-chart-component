@@ -231,6 +231,10 @@ main {
         margin: 1rem;
     }
 
+    .my-balance-title {
+        font-size: 1.5rem;
+    }
+
     .spendings-container {
         height: 450px;
     }
@@ -243,8 +247,20 @@ main {
         font-size: 1.2rem;
     }
 
+    .spendings-total-title {
+        font-size: 1.2rem;
+    }
+
+    .spendings-total-amount {
+        font-size: 4rem;
+    }
+
     .spendings-last-month-amount {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .spendings-last-month-title {
+        font-size: 1.2rem;
     }
 
     .day-container-info {
