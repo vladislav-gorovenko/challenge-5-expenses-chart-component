@@ -1,0 +1,256 @@
+/* importing fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+/* generic styles */
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.8rem;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+}
+
+:root {
+    /* primary colors */
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    /* neutral colors */
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+main {
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.default-padding {
+    padding: 2.9rem 4.1rem;
+}
+
+.default-border-radius {
+    border-radius: 2rem;
+}
+
+/* specific styles */
+
+/* expenses container */
+
+.expenses-container {
+
+    width: 540px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+
+    overflow: hidden;
+}
+
+.my-balance-container {
+    background: var(--soft-red);
+    color: var(--very-pale-orange);
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-balance {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.my-balance-amount {
+    /* margin-top: 0.5rem; */
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* spendings container */
+
+.spendings-container {
+    margin-top: 2.2rem;
+    background: var(--very-pale-orange);
+
+    height: 515px;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spendings-title {
+    color: var(--dark-brown);
+}
+
+/* weekly spendings */
+
+.weekly-spendings-container {
+
+    margin: 5rem 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    transform: translateY(5%);
+
+    border-bottom: solid 1px var(--cream);
+}
+
+.day-container {
+    text-align: center;
+
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+
+}
+
+.day-container-filling-part {
+    position: relative;
+}
+
+.day-container-filled {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 80%;
+    height: 30%;
+    background: var(--soft-red);
+    border-radius: 5px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.day-container-filled div {
+    position: relative;
+    width: 120%;
+    height: 100%;
+    transform: translateX(-13%);
+}
+
+.day-container-info {
+    width: 110%;
+    position: absolute;
+    top: -4.5rem;
+
+    font-size: 1.5rem;
+
+    border-radius: 5px;
+
+    padding: 0.8rem;
+    background: var(--dark-brown);
+    color: var(--very-pale-orange);
+
+    scale: 0.0;
+    /* display: none; */
+    transition: all 0.1s ease-in-out;
+}
+
+.day-container-filled:hover div .day-container-info {
+    scale: 1.0;
+    display: block;
+}
+
+.day-container-filled:hover {
+    filter: brightness(1.2);
+}
+
+.day-container.maximum .day-container-filling-part .day-container-filled {
+    background: var(--cyan);
+}
+
+/* spending analysis */
+
+.spendings-analysis {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 2rem;
+}
+
+.spendings-total-title {
+    margin-bottom: 1rem;
+    color: var(--medium-brown);
+}
+
+.spendings-total-amount {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 0.8;
+    color: var(--dark-brown);
+}
+
+.spendings-last-month-title {
+    color: var(--medium-brown);
+}
+
+.spendings-last-month-amount {
+    text-align: right;
+    font-weight: bold;
+    color: var(--dark-brown);
+}
+
+
+@media (max-width: 530px) {
+
+    .default-padding {
+        padding: 2rem 2.5rem;
+    }
+    
+    .default-border-radius {
+        border-radius: 2rem;
+    }
+
+    .expenses-container {
+        margin: 1rem;
+    }
+
+    .spendings-container {
+        height: 450px;
+    }
+    
+    .spendings-title {
+        font-size: 2.5rem;
+    }
+
+    .day-container-title {
+        font-size: 1.2rem;
+    }
+
+    .spendings-last-month-amount {
+        font-size: 2rem;
+    }
+
+    .day-container-info {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+
+        top: -3rem;
+    }
+}
